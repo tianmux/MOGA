@@ -1,0 +1,112 @@
+{
+    "Generator": {
+        "FNAME": "5_1_nC_1k5k.ini",
+        "ADD": true,
+        "N_add": 2,
+        "IPart": 1000,
+        "Species": "electrons",
+        "Probe": false,
+        "Noise_reduc": true,
+        "Cathode": true,
+        "Q_total": 1,
+        "Ref_zpos": 0.0,
+        "Ref_clock": -2e-3,
+        "Ref_Ekin": 0.0,
+        "Type": "ring",
+        "Dist_z": "p",
+        "Lt": 2e-3,
+        "rt": 2e-6,
+        "Dist_pz": "FD_300",
+        "phi_eff": 4.46,
+        "E_photon": 4.67,
+        "Dist_x": "r",
+        "Lx": 4.0,
+        "Dist_y": "r",
+        "Ly": 4.0
+    },
+    "Astra": {
+        "NEWRUN": {
+            "Head": "CEPC RF Gun",
+            "RUN": 1,
+            "Distribution": "./inputs/S5_1_nC_1M5M.ini",
+            "Xoff": 0.0,
+            "Yoff": 0.0,
+            "TRACK_ALL": true,
+            "Auto_phase": true,
+            "H_max": 0.003,
+            "H_min": 0.0
+        },
+        "OUTPUT": {
+            "ZSTART": 0.0,
+            "ZSTOP": 3.4,
+            "Zemit": 3,
+            "Zphase": 3,
+            "RefS": true,
+            "TrackS": true,
+            "CathodeS": true,
+            "EmitS": true,
+            "PhaseS": true,
+            "LandFS": true,
+            "Lproject_emit": true
+        },
+        "CHARGE": {
+            "LSPCH": true,
+            "Lmirror": true,
+            "R_zero": -0.0,
+            "Nrad": 10,
+            "Cell_var": 2.0,
+            "Nlong_in": 100,
+            "min_grid": 0.0,
+            "Max_Scale": 0.05
+        },
+        "CAVITY": {
+            "LEField": true,
+            "File_Efield": [
+                {
+                    "path": "./inputs/3DTsingHua",
+                    "C_pos": -0.0035071356,
+                    "Nue": 1.3,
+                    "MaxE": 60,
+                    "Phi": -5
+                },
+                {
+                    "path": "./inputs/CDS14_15mm.txt",
+                    "Nue": 1.3,
+                    "MaxE": 26,
+                    "Phi": -30,
+                    "C_pos": 1.6
+                }
+            ]
+        },
+        "SOLENOID": {
+            "LBField": true,
+            "File_Bfield": [
+                {
+                    "path": "./inputs/Solenoid0.dat",
+                    "MaxB": 1,
+                    "S_pos": 0.35,
+                    "S_smooth": 100
+                },
+                {
+                    "path": "./inputs/Solenoid0.dat",
+                    "MaxB": -1,
+                    "S_pos": -0.35,
+                    "S_smooth": 100
+                },
+                {
+                    "path": "./inputs/Solenoid0.dat",
+                    "MaxB": 0.0,
+                    "S_pos": 3.5,
+                    "S_smooth": 100
+                }
+            ]
+        },
+        "MODULES": {
+            "LModule": true,
+            "Module": [
+                ["solenoid(1)", "solenoid(2)"]
+            ],
+            "Mod_Bfield": [0.21]
+        }
+    }
+}
